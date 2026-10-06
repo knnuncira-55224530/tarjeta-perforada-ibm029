@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tarjeta perforada IBM 029</title>
+  <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+  <main>
+    <h1>Tarjeta perforada IBM 029</h1>
+
+    <section class="panel">
+      <label for="entrada">Texto para perforar (máximo 80 caracteres)</label>
+      <input id="entrada" type="text" maxlength="80" autocomplete="off" placeholder="HOLA MUNDO 123">
+      <div class="botones">
+        <button id="btnPerforar" type="button">Perforar tarjeta</button>
+        <button id="btnLeer" type="button" class="secundario">Leer tarjeta</button>
+        <button id="btnLimpiar" type="button" class="secundario">Limpiar</button>
+      </div>
+      <p id="mensaje" role="status">Escribe un texto y perfora, o haz clic en la tarjeta para perforar a mano.</p>
+    </section>
+
+    <section aria-label="Tarjeta perforada">
+      <div id="tarjeta" class="tarjeta"></div>
+    </section>
+
+    <section class="panel">
+      <h2>Texto leído</h2>
+      <output id="salida" class="salida"></output>
+    </section>
+  </main>
+
+  <!-- Orden importante: datos -> negocio -> vista -> main -->
+  <script src="js/datos/tablaIBM029.js"></script>
+  <script src="js/negocio/codificador.js"></script>
+  <script src="js/negocio/decodificador.js"></script>
+  <script src="js/vista/vista.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
